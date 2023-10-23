@@ -19,17 +19,17 @@ window.onload = function() {
       "mis gafas"
     ];
     let when = [
-      "ayer",
-      "hace un mes",
-      "la semana pasada",
-      "el año pasado",
-      "la noche pasada"
+      "ayer.",
+      "hace un mes.",
+      "la semana pasada.",
+      "el año pasado.",
+      "la noche pasada."
     ];
 
-    let whoRandom = getObjectrandom(who);
-    let actionRandom = getObjectrandom(action);
-    let whatRandom = getObjectrandom(what);
-    let whenRandom = getObjectrandom(when);
+    let whoRandom = getObjectRandom(who);
+    let actionRandom = getObjectRandom(action);
+    let whatRandom = getObjectRandom(what);
+    let whenRandom = getObjectRandom(when);
 
     return (
       who[whoRandom] +
@@ -42,9 +42,14 @@ window.onload = function() {
     );
   };
 
-  function getObjectrandom(myArray) {
+  function getObjectRandom(myArray) {
     return Math.floor(Math.random() * myArray.length);
   }
 
   document.querySelector("#excuse").innerHTML = excuseGenerator();
+
+  let refresh = document.getElementById("refresh");
+  refresh.addEventListener("click", _ => {
+    location.reload();
+  });
 };
